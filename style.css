@@ -1,0 +1,35 @@
+html,
+body {
+	margin: 0px;
+	background-color: #002800;
+}
+
+.col > h1 {
+	color: white;
+	text-align: center;
+	margin-top: 10px;
+}
+
+.col > button {
+	box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+.titulo {
+	text-align: center;
+	background-color: black;
+	color: white;
+	padding: 20px;
+	font-size: 25px;
+}
+
+.carta {
+	position: relative;
+	width: 130px;
+	left: 100px;
+	margin-left: -75px;
+}
+
+#computadora-carta,
+#jugador-carta {
+	height: 210px;
+}
