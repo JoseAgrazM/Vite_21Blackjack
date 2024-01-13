@@ -1,5 +1,5 @@
 import _ from 'underscore';
-import { crearDeck, pedirCarta, valorCarta, determinarGanador } from './usercases/index.js';
+import { crearDeck, pedirCarta, valorCarta } from './usercases/index.js';
 
 const miModulo = (() => {
 	'use strict';
@@ -47,6 +47,22 @@ const miModulo = (() => {
 		imgCarta.src = `assets/cartas/${carta}.png`; //3H, JD
 		imgCarta.classList.add('carta');
 		divCartasJugadores[turno].append(imgCarta);
+	};
+
+	const determinarGanador = () => {
+		const [puntosMinimos, puntosComputadora] = puntosJugadores;
+
+		setTimeout(() => {
+			if (puntosComputadora === puntosMinimos) {
+				alert('Nadie gana :(');
+			} else if (puntosMinimos > 21) {
+				alert('Computadora gana');
+			} else if (puntosComputadora > 21) {
+				alert('Jugador Gana');
+			} else {
+				alert('Computadora Gana');
+			}
+		}, 100);
 	};
 
 	// turno de la computadora
