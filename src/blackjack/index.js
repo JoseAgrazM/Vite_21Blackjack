@@ -1,5 +1,5 @@
 import _ from 'underscore';
-import { crearDeck, pedirCarta, valorCarta } from './usercases/index.js';
+import { crearDeck, pedirCarta, valorCarta, determinarGanador } from './usercases/index.js';
 
 const miModulo = (() => {
 	'use strict';
