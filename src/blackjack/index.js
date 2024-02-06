@@ -42,11 +42,11 @@ const miModulo = (() => {
 		return puntosJugadores[turno];
 	};
 
-	const crearCarta = (carta, turno) => {
+	const crearCarta = async (carta, turno) => {
 		const imgCarta = document.createElement('img');
 		imgCarta.src = `assets/cartas/${carta}.png`; //3H, JD
-		imgCarta.classList.add('carta');
-		divCartasJugadores[turno].append(imgCarta);
+		await imgCarta.classList.add('carta');
+		await divCartasJugadores[turno].append(imgCarta);
 	};
 
 	const determinarGanador = () => {
@@ -62,11 +62,11 @@ const miModulo = (() => {
 			} else {
 				alert('Computadora Gana');
 			}
-		}, 100);
+		}, 150);
 	};
 
 	// turno de la computadora
-	const turnoComputadora = puntosMinimos => {
+	const turnoComputadora = async puntosMinimos => {
 		let puntosComputadora = 0;
 
 		do {
@@ -75,7 +75,7 @@ const miModulo = (() => {
 				carta,
 				puntosJugadores.length - 1
 			);
-			crearCarta(carta, puntosJugadores.length - 1);
+			await crearCarta(carta, puntosJugadores.length - 1);
 		} while (puntosComputadora < puntosMinimos && puntosMinimos <= 21);
 
 		determinarGanador();
